@@ -372,7 +372,7 @@ service:
 
   # tunnel-token:
 
-auth: 
+auth: {}
 # auth -- Available authentication methods.
 # @raw
 # Use username and password provided as a [password file](https://trino.io/docs/current/security/password-file.html#file-format):
