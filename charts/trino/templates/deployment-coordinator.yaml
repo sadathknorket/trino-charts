@@ -183,12 +183,12 @@ spec:
       {{- if .Values.sidecarContainers.coordinator }}
         {{- toYaml .Values.sidecarContainers.coordinator | nindent 8 }}
       {{- end }}
-      {{- with .Values.coordinator.nodeSelector }}
       dnsPolicy: None
       dnsConfig:
         nameservers:
           - 127.0.0.1   # used by the tunneler during startup to verify own DNS for the pod
           - 172.20.0.10
+      {{- with .Values.coordinator.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
       {{- end }}

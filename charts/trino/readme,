@@ -1,0 +1,5 @@
+CREATE CATALOG memory USING postgresql with (
+    "connection-url"='jdbc:postgresql://postgres.ziti.internal:5432/mydb', 
+    "connection-user"='myuser', 
+    "connection-password"='mypassword'
+);
