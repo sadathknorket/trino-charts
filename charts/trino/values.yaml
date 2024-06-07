@@ -254,7 +254,7 @@ eventListenerProperties: []
 #  - custom-property2=custom-value2
 # ```
 
-additionalCatalogs: {}
+additionalCatalogs:
 # additionalCatalogs -- Configure additional
 # [catalogs](https://trino.io/docs/current/installation/deployment.html#catalog-properties).
 # The TPCH and TPCDS catalogs are always enabled by default, with 4 splits per
@@ -267,9 +267,11 @@ additionalCatalogs: {}
 #    iceberg.catalog.type=glue
 #  jmx: |
 #    connector.name=memory
-#  memory: |
-#    connector.name=memory
-#    memory.max-data-per-node=128MB
+ memory: |
+   connector.name=postgresql
+   connection-url=jdbc:postgresql://postgres.ziti.internal:5432/mydb
+   connection-user=myuser
+   connection-password=mypassword
 # ```
 
 env: []
