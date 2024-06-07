@@ -366,7 +366,10 @@ service:
   type: ClusterIP
   port: 8080
 
-ziti: {}
+# ziti:
+#   secretName:
+#   tokenKey: 
+
   # tunnel-token:
 
 auth: 
@@ -519,7 +522,7 @@ coordinator:
   additionalVolumes:
     - name: hello-client13
       secret:
-        secretName: ziti-secret
+        secretName: hello-client13
   # coordinator.additionalVolumes -- One or more additional volumes to add to the coordinator.
   # @raw
   # Example:
