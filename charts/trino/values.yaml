@@ -354,7 +354,6 @@ securityContext:
 
 # -- [Container security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-container) configuration.
 containerSecurityContext:
-  # -- Control whether a process can gain more privileges than its parent process.
   allowPrivilegeEscalation: true
 
 
@@ -367,7 +366,10 @@ service:
   type: ClusterIP
   port: 8080
 
-auth: {}
+ziti: {}
+  # tunnel-token:
+
+auth: 
 # auth -- Available authentication methods.
 # @raw
 # Use username and password provided as a [password file](https://trino.io/docs/current/security/password-file.html#file-format):
@@ -517,7 +519,7 @@ coordinator:
   additionalVolumes:
     - name: hello-client13
       secret:
-        secretName: hello-client13
+        secretName: ziti-secret
   # coordinator.additionalVolumes -- One or more additional volumes to add to the coordinator.
   # @raw
   # Example:
